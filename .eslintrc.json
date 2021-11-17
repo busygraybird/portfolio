@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  },
+  "plugins": ["react", "prettier"],
+  "ignorePatterns": ["*.scss", "*.css", "rollup.config.js"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "import/no-anonymous-default-export": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 120,
+        "ignoreComments": true
+      }
+    ],
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
+  }
+}
