@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Portfolio from '../pages/portfolio';
 import styles from './styles/app.module.scss';
 import FirstMeeting from '../entities/first-meeting/ui';
+import Reminders from '../entities/reminders/ui';
+import { RecoilRoot } from 'recoil';
 
 const App = () => {
   const [isFirstMeeting, setIsFirstMeeting] = useState();
@@ -13,9 +15,12 @@ const App = () => {
   }, []);
 
   return (
-    <div className={styles.app}>
-      {isFirstMeeting ? <FirstMeeting /> : <Portfolio />}
-    </div>
+    <RecoilRoot>
+      <div className={styles.app}>
+        {isFirstMeeting ? <FirstMeeting /> : <Portfolio />}
+        <Reminders />
+      </div>
+    </RecoilRoot>
   );
 };
 

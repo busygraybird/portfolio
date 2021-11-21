@@ -1,4 +1,3 @@
-@import "vars";
 @import "../../shared/index";
 
 * {
@@ -13,7 +12,7 @@
 
 /* typography */
 
-p {
+p, a {
     @extend %small-font-size;
 }
 

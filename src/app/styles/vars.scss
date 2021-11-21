@@ -11,7 +11,7 @@
 
     /* animations */
 
-    --fade-in-out-animation: 4s 1 both fadeInOut;
+    --fade-in-out-animation: 4s 1 alternate fadeInOut;
 
     /* typography */
 
@@ -25,4 +25,8 @@
     --text-xxl: calc(var(--text-base-size) * 4);
     --text-xxxl: calc(var(--text-base-size) * 6);
     --text-xxxxl: calc(var(--text-base-size) * 7);
+
+    /* others */
+
+    --right-bottom-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
 }

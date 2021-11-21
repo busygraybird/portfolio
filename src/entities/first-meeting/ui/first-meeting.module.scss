@@ -19,6 +19,8 @@
         opacity: 0;
         animation: var(--fade-in-out-animation);
 
-        @extend %big-font-size;
+        &, & a {
+            @extend %big-font-size;
+        }
     }
 }

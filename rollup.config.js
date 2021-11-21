@@ -7,6 +7,7 @@ import replace from '@rollup/plugin-replace';
 import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
 import stylelint from 'stylelint';
+import image from '@rollup/plugin-image';
 
 export default {
   input: 'src/index.js',
@@ -23,6 +24,7 @@ export default {
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
+    image(),
     resolve({
       jsnext: true,
       module: true,
