@@ -1,0 +1,26 @@
+@import "vars";
+@import "../../shared/index";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root * {
+    font-size: var(--text-base-size);
+}
+
+/* typography */
+
+p {
+    @extend %small-font-size;
+}
+
+h1 {
+    @extend %big-font-size;
+}
+
+h2 {
+    @extend %medium-font-size;
+}

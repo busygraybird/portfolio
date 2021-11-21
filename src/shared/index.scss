@@ -1,0 +1,84 @@
+/* screen resolution breakpoints */
+
+$sr-xs: 540px;
+$sr-sm: 768px;
+$sr-md: 1024px;
+$sr-lg: 1440px;
+$sr-xl: 1920px;
+
+/* mixins */
+
+@mixin media-property($prop-name, $xs-value, $sm-value, $md-value, $lg-value, $xl-value, $max-value) {
+    @media (max-width: $sr-xs) {
+        #{$prop-name}: $xs-value;
+    }
+
+    @media (min-width: $sr-xs + 1) and (max-width: $sr-sm) {
+        #{$prop-name}: $sm-value;
+    }
+
+    @media (min-width: $sr-sm + 1) and (max-width: $sr-md) {
+        #{$prop-name}: $md-value;
+    }
+
+    @media (min-width: $sr-md + 1) and (max-width: $sr-lg) {
+        #{$prop-name}: $lg-value;
+    }
+
+    @media (min-width: $sr-lg + 1) and (max-width: $sr-xl) {
+        #{$prop-name}: $xl-value;
+    }
+
+    @media (min-width: $sr-xl + 1) {
+        #{$prop-name}: $max-value;
+    }
+}
+
+/* extensions */
+
+%small-font-size {
+    @include media-property(
+                    font-size,
+                    var(--text-xs),
+                    var(--text-sm),
+                    var(--text-md),
+                    var(--text-lg),
+                    var(--text-xl),
+                    var(--text-xxl)
+    );
+}
+
+%medium-font-size {
+    @include media-property(
+                    font-size,
+                    var(--text-sm),
+                    var(--text-md),
+                    var(--text-lg),
+                    var(--text-xl),
+                    var(--text-xxl),
+                    var(--text-xxxl)
+    );
+}
+
+%big-font-size {
+    @include media-property(
+                    font-size,
+                    var(--text-md),
+                    var(--text-lg),
+                    var(--text-xl),
+                    var(--text-xxl),
+                    var(--text-xxxl),
+                    var(--text-xxxxl)
+    );
+}
+
+/* animations */
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+}

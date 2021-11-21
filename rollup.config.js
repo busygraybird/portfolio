@@ -1,11 +1,12 @@
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 import babel from '@rollup/plugin-babel';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
+import stylelint from 'stylelint';
 
 export default {
   input: 'src/index.js',
@@ -18,18 +19,25 @@ export default {
     html({
       include: '**/*.html',
     }),
-    nodeResolve({
-      extensions: ['.js', '.html'],
-    }),
     replace({
+      preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
-    babel({
-      exclude: 'node_modules/**',
-      presets: ['@babel/preset-react', '@babel/preset-env'],
-      extensions: ['.js', '.html'],
+    resolve({
+      jsnext: true,
+      module: true,
+      browser: true,
+      extensions: ['.js'],
     }),
-    commonjs(),
+    commonjs({
+      exclude: 'src/**',
+    }),
+    babel({
+      babelHelpers: 'runtime',
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      plugins: ['@babel/plugin-transform-runtime']
+    }),
+    stylelint(),
     postcss({
       extract: false,
       modules: {

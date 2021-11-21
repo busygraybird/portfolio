@@ -1,0 +1,28 @@
+:root {
+    /* colors */
+
+    --main-color: #ffd8ea;
+    --dark-main-color: #e0b1c5;
+    --main-text-color: #fff;
+
+    /* gradients */
+
+    --first-meeting-gradient: linear-gradient(to right bottom, var(--main-color), var(--dark-main-color));
+
+    /* animations */
+
+    --fade-in-out-animation: 4s 1 both fadeInOut;
+
+    /* typography */
+
+    --text-base-size: 14px;
+
+    --text-xs: calc(var(--text-base-size) * 0.875);
+    --text-sm: calc(var(--text-base-size) * 1);
+    --text-md: calc(var(--text-base-size) * 1.2);
+    --text-lg: calc(var(--text-base-size) * 1.6);
+    --text-xl: calc(var(--text-base-size) * 2);
+    --text-xxl: calc(var(--text-base-size) * 4);
+    --text-xxxl: calc(var(--text-base-size) * 6);
+    --text-xxxxl: calc(var(--text-base-size) * 7);
+}

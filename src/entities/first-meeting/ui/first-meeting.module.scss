@@ -1,0 +1,24 @@
+@import "../../../shared/index";
+
+.first-meeting {
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: var(--first-meeting-gradient);
+
+    &__phrase {
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        color: var(--main-text-color);
+        text-align: center;
+        opacity: 0;
+        animation: var(--fade-in-out-animation);
+
+        @extend %big-font-size;
+    }
+}
