@@ -23,6 +23,7 @@ export default {
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('development'),
+      'GITHUB_AUTH_TOKEN': process.env.REACT_APP_GITHUB_AUTH_TOKEN
     }),
     image(),
     resolve({
@@ -36,7 +37,13 @@ export default {
     }),
     babel({
       babelHelpers: 'runtime',
-      presets: ['@babel/preset-env', '@babel/preset-react'],
+      presets: [
+        '@babel/preset-env',
+        [
+          "@babel/preset-react",
+          { "runtime": "automatic" }
+        ]
+      ],
       plugins: ['@babel/plugin-transform-runtime']
     }),
     stylelint(),

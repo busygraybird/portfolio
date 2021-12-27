@@ -9,11 +9,11 @@ const firstMeetingPhrases = [
       <>
         You may see my github account{' '}
         <a
-          href='https://github.com/greybusybird'
+          href='https://github.com/busygraybird'
           target='_blank'
           rel='noreferrer'
         >
-          greybusybird
+          busygraybird
         </a>
       </>
     ),

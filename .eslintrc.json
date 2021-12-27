@@ -12,7 +12,7 @@
     "sourceType": "module"
   },
   "env": {
-    "browser": true
+    "node": true
   },
   "plugins": ["react", "prettier"],
   "ignorePatterns": ["*.scss", "*.css", "rollup.config.js"],

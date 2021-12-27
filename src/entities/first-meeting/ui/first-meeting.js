@@ -19,6 +19,7 @@ const FirstMeeting = ({ close }) => {
       nextPhrase = getNextPhrase();
 
       if (nextPhrase.done) {
+        // TODO: rename item
         setItemToLS('isNotFirstMeeting', true);
         clearInterval(interval);
         close();
