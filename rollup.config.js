@@ -8,6 +8,7 @@ import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
 import stylelint from 'stylelint';
 import image from '@rollup/plugin-image';
+import dotenv from "rollup-plugin-dotenv";
 
 export default {
   input: 'src/index.js',
@@ -17,13 +18,13 @@ export default {
     sourcemap: true,
   },
   plugins: [
+    dotenv(),
     html({
       include: '**/*.html',
     }),
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('development'),
-      'GITHUB_AUTH_TOKEN': process.env.REACT_APP_GITHUB_AUTH_TOKEN
     }),
     image(),
     resolve({
